@@ -32,7 +32,7 @@ spec:
       type: string
     - jsonPath: .status.expiresAt
       name: Expira
-      type: date
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Idade
       type: date

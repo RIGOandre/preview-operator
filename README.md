@@ -23,9 +23,9 @@ spec:
 ```
 
 ```
-$ kubectl get previews -n previews
-NAME    PR          #    PHASE   URL                                    EXPIRA   IDADE
-pr-42   acme/loja   42   Ready   https://pr-42-acme-loja.preview.dev    7h58m    2m
+$ kubectl get preview -n previews
+NAME    PR          #    PHASE   URL                                   EXPIRA                 IDADE
+pr-42   acme/loja   42   Ready   https://pr-42-acme-loja.preview.dev   2026-09-15T01:10:04Z   2m
 ```
 
 ---

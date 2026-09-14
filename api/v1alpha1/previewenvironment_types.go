@@ -177,7 +177,12 @@ type PreviewEnvironmentStatus struct {
 // +kubebuilder:printcolumn:name="#",type=integer,JSONPath=`.spec.pullRequest`
 // +kubebuilder:printcolumn:name="Phase",type=string,JSONPath=`.status.phase`
 // +kubebuilder:printcolumn:name="URL",type=string,JSONPath=`.status.url`
-// +kubebuilder:printcolumn:name="Expira",type=date,JSONPath=`.status.expiresAt`
+// `type=string` e não `type=date`: o kubectl renderiza coluna de data como
+// tempo decorrido, e para um instante no futuro o cálculo dá negativo e a
+// coluna sai `<invalid>` — ou seja, ilegível durante toda a vida do ambiente,
+// que é exatamente quando alguém olha para ela. Como string, sai o instante do
+// vencimento. `Idade` continua `date` porque aponta para o passado.
+// +kubebuilder:printcolumn:name="Expira",type=string,JSONPath=`.status.expiresAt`
 // +kubebuilder:printcolumn:name="Idade",type=date,JSONPath=`.metadata.creationTimestamp`
 
 // PreviewEnvironment é um ambiente efêmero de pull request.
