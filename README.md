@@ -169,7 +169,7 @@ dentro, consumindo quota sem nenhum objeto que aponte para ele.
 ```
 $ go test ./... -race -cover
 ok  github.com/RIGOandre/preview-operator/api/v1alpha1        coverage: 37.3%
-ok  github.com/RIGOandre/preview-operator/internal/controller  coverage: 88.4%
+ok  github.com/RIGOandre/preview-operator/internal/controller  coverage: 89.3%
 ```
 
 60 casos, em duas camadas. Os 37% do pacote da API são cobertura diluída pelo
